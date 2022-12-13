@@ -231,7 +231,7 @@ def getimageURL(code):
 
 def loadJson(path):
     try:
-        data = urllib.request.urlopen(path)
+        data = urllib.request.urlopen(urllib.request.Request(path, headers={"User-Agent": "Mozilla/5.0"}))
     except:
         return
     else:
